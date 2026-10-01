@@ -1,0 +1,9 @@
+{
+  "name": "hk-trip-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 5174 --bind 127.0.0.1",
+    "test": "node scripts/check.mjs"
+  }
+}

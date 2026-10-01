@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f5f7" />
+    <title>香港・深圳｜五日行程</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#overview" aria-label="返回总览">
+        <span class="brand-mark">HK</span>
+        <span>香港・深圳</span>
+      </a>
+      <nav aria-label="页面导航">
+        <a href="#days">计划</a>
+        <a href="#photos">拍照</a>
+        <a href="#tasks">事项</a>
+        <a href="#guide">电话卡与银行</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">2026.10.02 — 10.06</p>
+          <h1>香港・深圳五日行程</h1>
+          <p class="hero-subtitle">住宿位于深圳罗湖，10 月 3 日、4 日和 5 日进入香港。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#days">查看计划</a>
+            <a class="button secondary" href="#tasks">关键事项</a>
+          </div>
+        </div>
+        <div class="route-card" aria-label="行程概览">
+          <div class="route-line"><span class="route-dot active"></span><div><b>10.02</b><small>抵达深圳 · 蘩楼 · 百草堂</small></div></div>
+          <div class="route-line"><span class="route-dot"></span><div><b>10.03</b><small>深水埗 · 维港 · 中环 · 太平山</small></div></div>
+          <div class="route-line"><span class="route-dot"></span><div><b>10.04</b><small>香港迪士尼</small></div></div>
+          <div class="route-line"><span class="route-dot"></span><div><b>10.05</b><small>坚尼地城 · 银行 · 朋友晚餐</small></div></div>
+          <div class="route-line"><span class="route-dot"></span><div><b>10.06</b><small>水贝 · 15:00 抵达机场</small></div></div>
+        </div>
+      </section>
+
+      <section class="alert-strip" aria-label="最高优先级提醒">
+        <span class="alert-icon">!</span>
+        <div><strong>10 月 3 日返深后先续签。</strong><span>办完再次读取通行证，确认新签注已写入；这是 10 月 4 日迪士尼的硬前置。</span></div>
+      </section>
+
+      <section class="section" id="days">
+        <div class="section-heading">
+          <div><p class="eyebrow">Daily plan</p><h2>每日计划</h2></div>
+          <p>按日期查看时间、地点、交通安排和当天预案。</p>
+        </div>
+        <div class="day-tabs" role="tablist" aria-label="选择日期" id="day-tabs"></div>
+        <article class="schedule-shell">
+          <div class="schedule-head">
+            <div><p id="day-kicker"></p><h3 id="day-title"></h3></div>
+            <div class="day-meta" id="day-meta"></div>
+          </div>
+          <div class="schedule-list" id="schedule-list"></div>
+          <div class="fallback" id="fallback"></div>
+        </article>
+      </section>
+
+      <section class="section photo-section" id="photos">
+        <div class="section-heading light">
+          <div><p class="eyebrow">Photo notes</p><h2>出片机位</h2></div>
+          <p>按日期记录拍摄地点、时间、机位、构图和现场限制。</p>
+        </div>
+        <div class="filter-row" id="photo-filters" aria-label="筛选拍摄日期"></div>
+        <div class="photo-grid" id="photo-grid"></div>
+      </section>
+
+      <section class="section" id="tasks">
+        <div class="section-heading">
+          <div><p class="eyebrow">Must do</p><h2>关键事项</h2></div>
+          <div class="task-tools">
+            <span id="task-progress">0 / 0</span>
+            <button class="text-button" id="unfinished-only" type="button">只看未完成</button>
+          </div>
+        </div>
+        <div class="task-layout">
+          <div class="task-list" id="task-list"></div>
+          <aside class="passport-card">
+            <p class="eyebrow">签注节奏</p>
+            <h3>三次入港，逐晚确认</h3>
+            <ol>
+              <li><b>10.03 白天</b><span>使用已有签注入港。</span></li>
+              <li><b>10.03 晚</b><span>返深后自助机续签，供 10.04 使用。</span></li>
+              <li><b>10.04 晚</b><span>如 10.05 需要新的单次签注，再办一次。</span></li>
+            </ol>
+            <p class="fine">候选：南湖街道便民服务中心，沿河南路 1122 号。出发当天仍须在“深圳公安”警务电子地图确认 24 小时服务。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section guide-section" id="guide">
+        <div class="section-heading">
+          <div><p class="eyebrow">2026.10.01 核对</p><h2>电话卡与银行卡</h2></div>
+          <p>记录套餐价格、开户资格、所需材料、办理步骤和官方核对链接。</p>
+        </div>
+
+        <article class="guide-card sim-card">
+          <div class="guide-title">
+            <div><span class="category">香港号码</span><h3>Club SIM 套餐与续期</h3></div>
+            <span class="status caution">现场核价</span>
+          </div>
+          <div class="fact-grid">
+            <div><small>历史套餐</small><strong class="strike">HK$6 / 年</strong><p>旧版独立短信包的续期价格，目前未在官网套餐页显示。</p></div>
+            <div><small>2026 年 7 月公开实测</small><strong>约 HK$15 / 次</strong><p>公开实测称 HK$6 套餐已下架；具体包名以 Club SIM App 为准。</p></div>
+            <div><small>当前官网可见</small><strong>HK$28 / 月</strong><p>语音及短信组合；官网暂未公开 HK$6 独立包。</p></div>
+          </div>
+          <div class="steps">
+            <div><span>01</span><p><b>在哪里买</b>深水埗福华街 132—134 号地下 B2、C1 铺，11:00—20:00。7‑Eleven 有货也可买，但必须认准 Club SIM。</p></div>
+            <div><span>02</span><p><b>怎么激活</b>Club SIM App 扫卡套二维码，用本人旅行证件实名；收到成功短信并测试收码后再离店。</p></div>
+            <div><span>03</span><p><b>怎么保号</b>条款要求自最后一次购买服务组合起 365 天内再次购买。第 330、350 天设提醒，届时买 App 内最便宜组合。</p></div>
+          </div>
+          <div class="callout"><b>别买错：</b>“csl × 7‑Eleven 本地储值卡”是另一张卡，管理费和续期规则不同。也不要把 Club SIM 作为银行唯一收码号码。</div>
+          <div class="source-row">
+            <a href="https://clubsim.com.hk/en/go/clubSim-tnc" target="_blank" rel="noreferrer">365 天条款 ↗</a>
+            <a href="https://www.clubsim.com.hk/clsweb" target="_blank" rel="noreferrer">当前套餐 ↗</a>
+            <a href="https://www.clubsim.com.hk/post-paid/shop/" target="_blank" rel="noreferrer">门店 ↗</a>
+            <a href="https://www.youtube.com/watch?v=as8wSpYO_w8" target="_blank" rel="noreferrer">2026-07 实测 ↗</a>
+          </div>
+        </article>
+
+        <div class="bank-grid">
+          <article class="guide-card bank-card featured">
+            <div class="guide-title"><div><span class="category">数字银行</span><h3>ZA Bank 众安</h3></div><span class="status good">10 月 5 日办理</span></div>
+            <p class="bank-lead">现有行程安排申请储蓄账户及港美股投资账户。</p>
+            <dl>
+              <div><dt>最低余额</dt><dd>无</dd></div>
+              <div><dt>办理位置</dt><dd>必须人在香港境内</dd></div>
+              <div><dt>准备材料</dt><dd>身份证原件、内地手机号、同号内地储蓄卡、出入境记录 PDF</dd></div>
+              <div><dt>投资账户</dt><dd>储蓄账户后继续申请；仍须人在香港</dd></div>
+              <div><dt>耗时</dt><dd>顺利可约 30—45 分钟，但人工审核不保证当场完成</dd></div>
+            </dl>
+            <div class="mini-plan"><b>10.05 13:00—13:45</b><span>坚尼地城吃午饭时申请。14:05 无论审核是否结束都返程。</span></div>
+            <div class="source-row"><a href="https://bank.za.group/en/support/details?FAQ=za-card-payment-foreign&PFAQ=Individuals-visitor-in-HK&title=Individuals" target="_blank" rel="noreferrer">旅客资格 ↗</a><a href="https://bank.za.group/en/faqs/Individuals/Investment_Related/Opening_an_investment_account/673c054b9368571c627b508d" target="_blank" rel="noreferrer">投资账户 ↗</a></div>
+          </article>
+
+          <article class="guide-card bank-card">
+            <div class="guide-title"><div><span class="category">传统银行</span><h3>HSBC One 汇丰</h3></div><span class="status neutral">备选</span></div>
+            <p class="bank-lead">记录非香港身份证持有人于 2026 年开户时的余额和办理要求。</p>
+            <dl>
+              <div><dt>关系余额</dt><dd>HK$10,000</dd></div>
+              <div><dt>余额不足</dt><dd>HK$100 / 月低额结存服务费</dd></div>
+              <div><dt>计算口径</dt><dd>连续 3 个月平均全面理财总值</dd></div>
+              <div><dt>材料与方式</dt><dd>港澳通行证有效期至少 6 个月；可按官方流程用 App 申请，非 HKID 页面亦提示部分情况须预约后到旺角分行或总行</dd></div>
+              <div><dt>账户条件</dt><dd>维持 HK$10,000 平均全面理财总值可豁免低额结存服务费</dd></div>
+            </dl>
+            <div class="mini-plan muted"><b>未写入现有行程</b><span>如需办理，单独预留 1—2 小时并确认预约、网点及所需材料。</span></div>
+            <div class="source-row"><a href="https://www.hsbc.com.hk/zh-cn/accounts/products/one/" target="_blank" rel="noreferrer">HSBC One 2026 规则 ↗</a><a href="https://www.hsbc.com.hk/international/banking-in-hong-kong/" target="_blank" rel="noreferrer">开户方式 ↗</a></div>
+          </article>
+        </div>
+
+        <div class="legal-note"><b>资金合规：</b>开户成功不代表可以把内地个人便利化购汇资金用于境外证券投资。资金来源、购汇用途、税务居民信息和 W‑8BEN 必须按真实情况填写；不使用私人换汇、虚假用途或拆分转账。</div>
+      </section>
+
+      <section class="section compact-section" id="notes">
+        <div class="section-heading"><div><p class="eyebrow">Quick notes</p><h2>注意事项</h2></div></div>
+        <div class="note-grid">
+          <div><span>交通</span><h3>罗湖关口 24:00 关闭</h3><p>晚了直接打车到 24 小时皇岗口岸港方口岸区；过关后再打车回罗湖。</p></div>
+          <div><span>支付</span><h3>带 HK$300—400 小钞</h3><p>商场扫码覆盖高，小店不统一。不要只带 HK$500 或 HK$1,000 大钞。</p></div>
+          <div><span>流量</span><h3>支付宝 3GB 日包</h3><p>约 ¥10/天；打开数据漫游。内地主卡保留港澳漫游作收银行验证码的兜底。</p></div>
+          <div><span>港铁</span><h3>全日通不含罗湖段</h3><p>普通游客全日通不含往返罗湖／落马洲，边境段需要另外付费。</p></div>
+          <div><span>迪士尼</span><h3>电子票二维码可入园</h3><p>提前绑定官方 App、保存离线截图，并随身带购票对应证件。</p></div>
+          <div><span>水贝</span><h3>12:30 必须结束</h3><p>先问料价、克重、工费和总价；至少比三家，完整保留票据。</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>香港・深圳五日行程</span><span>规则核对：2026.10.01 · 本地保存完成状态</span></footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
