@@ -13,6 +13,8 @@ for (const id of required) {
 if (!js.includes('id: "1006"')) throw new Error("Five-day itinerary data is incomplete");
 if (!html.includes("Club SIM 套餐与续期")) throw new Error("Club SIM section is missing");
 if (!html.includes("通常一年买一次")) throw new Error("Club SIM annual renewal explanation is missing");
+if (!html.includes("10.03 13:00—13:45")) throw new Error("ZA Bank schedule is not assigned to October 3");
+if (!js.includes('"za-submit"') || !js.includes('"10.03"')) throw new Error("ZA Bank task date is incorrect");
 if (!html.includes("HSBC One")) throw new Error("HSBC guide is missing");
 if ((html.match(/data-view-target=/g) || []).length !== 6) throw new Error("Main tab navigation is incomplete");
 if (!html.includes("这次只办 ZA Bank 即可")) throw new Error("Bank account decision is missing");
