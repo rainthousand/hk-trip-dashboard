@@ -9,27 +9,30 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#overview" aria-label="返回总览">
+      <a class="brand" href="#overview" data-view-link="overview" aria-label="返回总览">
         <span class="brand-mark">HK</span>
         <span>香港・深圳</span>
       </a>
-      <nav aria-label="页面导航">
-        <a href="#days">计划</a>
-        <a href="#photos">拍照</a>
-        <a href="#tasks">事项</a>
-        <a href="#guide">电话卡与银行</a>
+      <nav role="tablist" aria-label="页面导航">
+        <button class="main-tab active" type="button" role="tab" aria-selected="true" data-view-target="overview">总览</button>
+        <button class="main-tab" type="button" role="tab" aria-selected="false" data-view-target="days">计划</button>
+        <button class="main-tab" type="button" role="tab" aria-selected="false" data-view-target="photos">拍照</button>
+        <button class="main-tab" type="button" role="tab" aria-selected="false" data-view-target="tasks">待办</button>
+        <button class="main-tab" type="button" role="tab" aria-selected="false" data-view-target="guide">卡与银行</button>
+        <button class="main-tab" type="button" role="tab" aria-selected="false" data-view-target="notes">注意</button>
       </nav>
     </header>
 
     <main>
+      <div class="app-view overview-view" data-view="overview">
       <section class="hero" id="overview">
         <div class="hero-copy">
           <p class="eyebrow">2026.10.02 — 10.06</p>
           <h1>香港・深圳五日行程</h1>
           <p class="hero-subtitle">住宿位于深圳罗湖，10 月 3 日、4 日和 5 日进入香港。</p>
           <div class="hero-actions">
-            <a class="button primary" href="#days">查看计划</a>
-            <a class="button secondary" href="#tasks">关键事项</a>
+            <a class="button primary" href="#days" data-view-link="days">查看计划</a>
+            <a class="button secondary" href="#tasks" data-view-link="tasks">关键事项</a>
           </div>
         </div>
         <div class="route-card" aria-label="行程概览">
@@ -45,8 +48,9 @@
         <span class="alert-icon">!</span>
         <div><strong>10 月 3 日返深后先续签。</strong><span>办完再次读取通行证，确认新签注已写入；这是 10 月 4 日迪士尼的硬前置。</span></div>
       </section>
+      </div>
 
-      <section class="section" id="days">
+      <section class="section app-view" data-view="days" id="days" hidden>
         <div class="section-heading">
           <div><p class="eyebrow">Daily plan</p><h2>每日计划</h2></div>
           <p>按日期查看时间、地点、交通安排和当天预案。</p>
@@ -62,7 +66,7 @@
         </article>
       </section>
 
-      <section class="section photo-section" id="photos">
+      <section class="section photo-section app-view" data-view="photos" id="photos" hidden>
         <div class="section-heading light">
           <div><p class="eyebrow">Photo notes</p><h2>出片机位</h2></div>
           <p>按日期记录拍摄地点、时间、机位、构图和现场限制。</p>
@@ -71,7 +75,7 @@
         <div class="photo-grid" id="photo-grid"></div>
       </section>
 
-      <section class="section" id="tasks">
+      <section class="section app-view" data-view="tasks" id="tasks" hidden>
         <div class="section-heading">
           <div><p class="eyebrow">Must do</p><h2>关键事项</h2></div>
           <div class="task-tools">
@@ -94,11 +98,25 @@
         </div>
       </section>
 
-      <section class="section guide-section" id="guide">
+      <section class="section guide-section app-view" data-view="guide" id="guide" hidden>
         <div class="section-heading">
           <div><p class="eyebrow">2026.10.01 核对</p><h2>电话卡与银行卡</h2></div>
           <p>记录套餐价格、开户资格、所需材料、办理步骤和官方核对链接。</p>
         </div>
+
+        <article class="decision-card">
+          <div>
+            <span class="category">开户判断</span>
+            <h3>这次只办 ZA Bank 即可</h3>
+            <p>你的当前用途是持有香港银行账户并交易港股、美股。ZA Bank 已覆盖这些功能，现阶段没有必须同时开 HSBC One 的功能缺口。</p>
+          </div>
+          <div class="decision-grid">
+            <div><b>ZA 已覆盖</b><span>储蓄账户、Visa 借记卡、港股和美股投资账户；无最低账户余额。</span></div>
+            <div><b>汇丰新增成本</b><span>2026 年起非 HKID 新户须维持 HK$10,000 平均全面理财总值，否则收 HK$100/月。</span></div>
+            <div><b>可以暂缓</b><span>现有行程仅保留 ZA 申请。汇丰不需要为了“多一张卡”占用本次旅行时间。</span></div>
+            <div><b>以后再考虑</b><span>需要实体网点、汇丰跨境账户体系、第二家银行备用，或明确使用其证券服务时再申请。</span></div>
+          </div>
+        </article>
 
         <article class="guide-card sim-card">
           <div class="guide-title">
@@ -126,7 +144,7 @@
 
         <div class="bank-grid">
           <article class="guide-card bank-card featured">
-            <div class="guide-title"><div><span class="category">数字银行</span><h3>ZA Bank 众安</h3></div><span class="status good">10 月 5 日办理</span></div>
+            <div class="guide-title"><div><span class="category">数字银行</span><h3>ZA Bank 众安</h3></div><span class="status good">当前办理项</span></div>
             <p class="bank-lead">现有行程安排申请储蓄账户及港美股投资账户。</p>
             <dl>
               <div><dt>最低余额</dt><dd>无</dd></div>
@@ -140,14 +158,14 @@
           </article>
 
           <article class="guide-card bank-card">
-            <div class="guide-title"><div><span class="category">传统银行</span><h3>HSBC One 汇丰</h3></div><span class="status neutral">备选</span></div>
+            <div class="guide-title"><div><span class="category">传统银行</span><h3>HSBC One 汇丰</h3></div><span class="status neutral">暂不办理</span></div>
             <p class="bank-lead">记录非香港身份证持有人于 2026 年开户时的余额和办理要求。</p>
             <dl>
               <div><dt>关系余额</dt><dd>HK$10,000</dd></div>
               <div><dt>余额不足</dt><dd>HK$100 / 月低额结存服务费</dd></div>
               <div><dt>计算口径</dt><dd>连续 3 个月平均全面理财总值</dd></div>
               <div><dt>材料与方式</dt><dd>港澳通行证有效期至少 6 个月；可按官方流程用 App 申请，非 HKID 页面亦提示部分情况须预约后到旺角分行或总行</dd></div>
-              <div><dt>账户条件</dt><dd>维持 HK$10,000 平均全面理财总值可豁免低额结存服务费</dd></div>
+              <div><dt>账户条件</dt><dd>维持 HK$10,000 平均全面理财总值可豁免低额结存服务费；证券标准收费通常高于 ZA，符合 Trade25 资格时另行比较</dd></div>
             </dl>
             <div class="mini-plan muted"><b>未写入现有行程</b><span>如需办理，单独预留 1—2 小时并确认预约、网点及所需材料。</span></div>
             <div class="source-row"><a href="https://www.hsbc.com.hk/zh-cn/accounts/products/one/" target="_blank" rel="noreferrer">HSBC One 2026 规则 ↗</a><a href="https://www.hsbc.com.hk/international/banking-in-hong-kong/" target="_blank" rel="noreferrer">开户方式 ↗</a></div>
@@ -157,7 +175,7 @@
         <div class="legal-note"><b>资金合规：</b>开户成功不代表可以把内地个人便利化购汇资金用于境外证券投资。资金来源、购汇用途、税务居民信息和 W‑8BEN 必须按真实情况填写；不使用私人换汇、虚假用途或拆分转账。</div>
       </section>
 
-      <section class="section compact-section" id="notes">
+      <section class="section compact-section app-view" data-view="notes" id="notes" hidden>
         <div class="section-heading"><div><p class="eyebrow">Quick notes</p><h2>注意事项</h2></div></div>
         <div class="note-grid">
           <div><span>交通</span><h3>罗湖关口 24:00 关闭</h3><p>晚了直接打车到 24 小时皇岗口岸港方口岸区；过关后再打车回罗湖。</p></div>

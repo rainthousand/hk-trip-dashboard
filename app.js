@@ -89,6 +89,22 @@ let activeDay = "1002";
 let photoFilter = "all";
 let onlyUnfinished = false;
 const completed = new Set(JSON.parse(localStorage.getItem("hk-trip-tasks") || "[]"));
+const viewNames = new Set(["overview", "days", "photos", "tasks", "guide", "notes"]);
+
+function setActiveView(view, updateHash = true) {
+  const target = viewNames.has(view) ? view : "overview";
+  document.querySelectorAll(".app-view").forEach(panel => {
+    const active = panel.dataset.view === target;
+    panel.hidden = !active;
+  });
+  document.querySelectorAll("[data-view-target]").forEach(tab => {
+    const active = tab.dataset.viewTarget === target;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", String(active));
+  });
+  if (updateHash) history.replaceState(null, "", `#${target}`);
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
 
 function renderDays() {
   const tabs = document.querySelector("#day-tabs");
@@ -126,6 +142,13 @@ function renderTasks() {
 }
 
 document.querySelector("#unfinished-only").addEventListener("click", () => { onlyUnfinished = !onlyUnfinished; renderTasks(); });
+document.querySelectorAll("[data-view-target]").forEach(tab => tab.addEventListener("click", () => setActiveView(tab.dataset.viewTarget)));
+document.querySelectorAll("[data-view-link]").forEach(link => link.addEventListener("click", event => {
+  event.preventDefault();
+  setActiveView(link.dataset.viewLink);
+}));
+window.addEventListener("hashchange", () => setActiveView(location.hash.slice(1), false));
 renderDays();
 renderPhotos();
 renderTasks();
+setActiveView(location.hash.slice(1) || "overview", false);
