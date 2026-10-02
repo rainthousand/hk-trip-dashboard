@@ -60,12 +60,12 @@ const days = [
 ];
 
 const photos = [
-  ["1003","14:15—14:40","星光大道 · 维港","沿海滨向西，人物靠栏杆，背景保留港岛天际线和海面。先点脸测光，再略降曝光。",["广角全景","HDR","下午侧光"]],
-  ["1003","15:10—15:30","钟楼 · 五支旗杆","钟楼、绿色天星小轮与维港一起入画，利用旗杆和栏杆做前景。",["中焦","港风","快速完成"]],
-  ["1003","15:30—16:00","海港城玻璃楼梯","钟楼对面海港城入口上二楼露台。人站楼梯中段，摄影者站稍高处，把小轮与港岛楼群收入背景。",["人像焦段","竖构图","阴影优先"]],
-  ["1003","16:00—16:35","广东道外街","Dior、Chanel、Fendi 店面、护栏和红色的士；摄影者与人物都留在人行道。",["长焦压缩","等车经过","不进车道"]],
-  ["1003","16:50—17:10","天星小轮","上船找临窗或船尾且不挡通行的位置，用窗框构图拍海面与城市。",["窗框","动态快照","避免挡路"]],
-  ["1003","17:25—17:50","遮打花园 · The Henderson","J2附近先拍绿地与摩天楼，再步行到2 Murray Road拍玻璃装置和流线外观。",["超广角","建筑线条","可临时撤"]],
+  ["1003","14:15—14:40","星光大道 · 维港","沿海滨向西，人物靠栏杆，背景保留港岛天际线和海面。先点脸测光，再略降曝光。",["广角全景","HDR","下午侧光"],{url:"https://xhslink.cn/o/9Wpr9e0DO7f",label:"来迟了，维港"}],
+  ["1003","15:10—15:30","钟楼 · 五支旗杆","钟楼、绿色天星小轮与维港一起入画，利用旗杆和栏杆做前景。",["中焦","港风","快速完成"],{url:"https://xhslink.cn/o/9Wpr9e0DO7f",label:"来迟了，维港"}],
+  ["1003","15:30—16:00","海港城玻璃楼梯","钟楼对面海港城入口上二楼露台。人站楼梯中段，摄影者站稍高处，把小轮与港岛楼群收入背景。",["人像焦段","竖构图","阴影优先"],{url:"https://xhslink.cn/o/9Wpr9e0DO7f",label:"来迟了，维港"}],
+  ["1003","16:00—16:35","广东道外街","Dior、Chanel、Fendi 店面、护栏和红色的士；摄影者与人物都留在人行道。",["长焦压缩","等车经过","不进车道"],{url:"https://xhslink.cn/o/9Wpr9e0DO7f",label:"来迟了，维港"}],
+  ["1003","16:50—17:10","天星小轮","上船找临窗或船尾且不挡通行的位置，用窗框构图拍海面与城市。",["窗框","动态快照","避免挡路"],{url:"https://xhslink.cn/o/9Wpr9e0DO7f",label:"来迟了，维港"}],
+  ["1003","17:25—17:50","遮打花园 · The Henderson","J2附近先拍绿地与摩天楼，再步行到2 Murray Road拍玻璃装置和流线外观。",["超广角","建筑线条","可临时撤"],{url:"https://xhslink.cn/o/66iKz5beIy4",label:"中环打卡合集"}],
   ["1003","18:45—19:40","太平山夜景","先拍维港广角全景，再补少量栏杆边人物剪影；不要长时间占位。",["夜景模式","压高光","人物剪影"]],
   ["1004","12:30—14:30","魔雪奇缘世界","建筑、喷泉与拱门做层次；先玩项目，路过再拍，不专门排空景。",["彩色建筑","顺路拍","避免逆光脸黑"]],
   ["1004","18:30—夜间","城堡 · 美国小镇大街","天黑前拍街道纵深，亮灯后拍城堡正面；汇演只录短片。",["街道中轴","夜景","提前占位"]],
@@ -127,7 +127,7 @@ function renderPhotos() {
   const filters = [["all","全部"],["1003","10月3日"],["1004","10月4日"],["1005","10月5日"]];
   document.querySelector("#photo-filters").innerHTML = filters.map(f => `<button class="filter-button ${photoFilter === f[0] ? "active" : ""}" data-filter="${f[0]}">${f[1]}</button>`).join("");
   const visible = photos.filter(p => photoFilter === "all" || p[0] === photoFilter);
-  document.querySelector("#photo-grid").innerHTML = visible.map((p,i) => `<article class="photo-card"><span class="photo-index">SHOT ${String(i+1).padStart(2,"0")} · 10.${p[0].slice(2)}</span><div><span class="photo-time">${p[1]}</span><h3>${p[2]}</h3><p>${p[3]}</p><div class="photo-tip">${p[4].map(t=>`<span>${t}</span>`).join("")}</div></div></article>`).join("");
+  document.querySelector("#photo-grid").innerHTML = visible.map((p,i) => `<article class="photo-card"><span class="photo-index">SHOT ${String(i+1).padStart(2,"0")} · 10.${p[0].slice(2)}</span><div><span class="photo-time">${p[1]}</span><h3>${p[2]}</h3><p>${p[3]}</p><div class="photo-tip">${p[4].map(t=>`<span>${t}</span>`).join("")}</div>${p[5] ? `<a class="xhs-link" href="${p[5].url}" target="_blank" rel="noreferrer">查看小红书机位 <small>${p[5].label}</small><b>↗</b></a>` : ""}</div></article>`).join("");
   document.querySelectorAll("[data-filter]").forEach(btn => btn.addEventListener("click", () => { photoFilter = btn.dataset.filter; renderPhotos(); }));
 }
 

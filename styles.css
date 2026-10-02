@@ -109,6 +109,10 @@ main { overflow: hidden; }
 .photo-card p { margin: 17px 0 0; color: #b8b8be; font-size: 14px; line-height: 1.65; }
 .photo-tip { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
 .photo-tip span { padding: 7px 10px; color: #d5d5d7; background: #2a2a2f; border-radius: 8px; font-size: 11px; }
+.xhs-link { margin-top: 18px; padding: 12px 14px; display: flex; align-items: center; gap: 8px; color: #fff; background: #2a2a2f; border: 1px solid rgba(255,255,255,.09); border-radius: 12px; font-size: 12px; transition: background .2s ease, border-color .2s ease; }
+.xhs-link:hover { background: #343438; border-color: rgba(255,255,255,.18); }
+.xhs-link small { overflow: hidden; color: #9f9fa5; text-overflow: ellipsis; white-space: nowrap; }
+.xhs-link b { margin-left: auto; color: #ff5670; font-size: 14px; }
 
 .task-tools { display: flex; gap: 14px; align-items: center; color: var(--muted); font-size: 13px; }
 .text-button { border: 0; padding: 0; color: var(--blue); background: none; cursor: pointer; }

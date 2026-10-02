@@ -19,5 +19,8 @@ if (!html.includes("HSBC One")) throw new Error("HSBC guide is missing");
 if ((html.match(/data-view-target=/g) || []).length !== 6) throw new Error("Main tab navigation is incomplete");
 if (!html.includes("这次只办 ZA Bank 即可")) throw new Error("Bank account decision is missing");
 if (!js.includes("function setActiveView")) throw new Error("Tab switching logic is missing");
+if (!js.includes("https://xhslink.cn/o/9Wpr9e0DO7f")) throw new Error("Victoria Harbour Xiaohongshu reference is missing");
+if (!js.includes("https://xhslink.cn/o/66iKz5beIy4")) throw new Error("Central Xiaohongshu reference is missing");
+if (!js.includes("查看小红书机位")) throw new Error("Photo reference links are not rendered");
 if (!css.includes("@media (max-width: 540px)")) throw new Error("Mobile styles are missing");
 console.log("OK: structure, itinerary, research modules and responsive styles are present.");
